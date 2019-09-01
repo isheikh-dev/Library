@@ -25,4 +25,6 @@ class AuthorManagmentTest extends TestCase
         $this->assertInstanceOf(Carbon::class, $author->first()->dob);
         $this->assertEquals('1998/04/05', $author->first()->dob->format('Y/d/m'));
     }
+
+   
 }

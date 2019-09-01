@@ -9,7 +9,9 @@ class Book extends Model
     // protected $fillable = ['title', 'author'];
     protected $guarded = [];
 
-    public function path(){
-        return '/books/' . $this->id;
+    public function setAuthorIdAttribute($attribute){
+       $this->attributes['author_id'] = Author::firstOrCreate([
+            'name' => $attribute,
+       ])->id;
     }
 }
