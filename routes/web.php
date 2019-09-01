@@ -23,3 +23,9 @@ Route::delete('/books/{book}', 'BookController@destory');
 
 
 Route::post('/author', 'AuthorController@store');
+Route::post('/checkout/{book}', 'BookController@checkout');
+Route::post('/checkin/{book}', 'BookController@checkin');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

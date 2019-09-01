@@ -25,7 +25,24 @@ class BookController extends Controller
         return redirect('books');
     }
 
-    public function  validateRequest(){
+    public function checkout(Book $book){
+        if(auth()->user()){   $book->checkout(auth()->user()); } 
+        return redirect('/login');    
+    }
+
+    public function checkin(Book $book){
+        if(auth()->user()){
+            try{
+                $book->checkin(auth()->user());
+            } catch(\Exception $e){
+                return response([], 404);
+            }  
+        } 
+        return redirect('/login');    
+    }
+
+    public function  validateRequest()
+    {
         return  request()->validate([
             'title' => 'required',
             'author_id' => "required"
