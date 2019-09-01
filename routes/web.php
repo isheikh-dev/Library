@@ -22,7 +22,7 @@ Route::delete('/books/{book}', 'BookController@destory');
 
 
 
-Route::post('/author', 'AuthorController@store');
+Route::post('/authors/create', 'AuthorController@store');
 Route::post('/checkout/{book}', 'BookController@checkout');
 Route::post('/checkin/{book}', 'BookController@checkin');
 

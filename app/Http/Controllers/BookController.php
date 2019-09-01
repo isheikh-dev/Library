@@ -26,7 +26,10 @@ class BookController extends Controller
     }
 
     public function checkout(Book $book){
-        if(auth()->user()){   $book->checkout(auth()->user()); } 
+        if(auth()->user())
+        {   
+            $book->checkout(auth()->user()); 
+        } 
         return redirect('/login');    
     }
 

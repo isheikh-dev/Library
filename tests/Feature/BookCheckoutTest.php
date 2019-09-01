@@ -15,6 +15,8 @@ class BookCheckoutTest extends TestCase
     /** @test */
     public function a_book_can_be_checkout_by_a_signed_user()
     {  
+        // $this->withoutExceptionHandling();
+
         $book = factory(Book::class)->create();
         $user = factory(User::class)->create();
 
