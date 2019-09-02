@@ -16,7 +16,7 @@ class AuthorManagmentTest extends TestCase
 
         $this->withoutExceptionHandling();
 
-        $this->post('/authors', $this->AuthorData());
+        $this->post('/authors/create', $this->AuthorData());
         $author = Author::all();
         $this->assertCount(1, $author);
         $this->assertInstanceOf(Carbon::class, $author->first()->dob);
