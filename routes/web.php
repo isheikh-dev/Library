@@ -23,6 +23,8 @@ Route::delete('/books/{book}', 'BookController@destory');
 
 
 Route::post('/authors/create', 'AuthorController@store');
+Route::get('/authors/create', 'AuthorController@create');
+
 Route::post('/checkout/{book}', 'BookController@checkout');
 Route::post('/checkin/{book}', 'BookController@checkin');
 
